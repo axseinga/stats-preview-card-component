@@ -1,0 +1,124 @@
+///////////////// Colors /////////////////
+
+$color-primary: hsl(233, 47%, 7%);
+$color-secondary: hsl(244, 38%, 16%);
+$color-tertiary: hsl(277, 64%, 61%);
+
+$color-white: hsl(0, 0%, 100%);
+$color-grey-light: hsla(0, 0%, 100%, 0.75);
+$color-grey-dark: hsla(0, 0%, 100%, 0.6);
+
+///////////////// Fonts /////////////////
+
+$font-1: "Inter", sans-serif;
+$font-2: "Lexend Deca", sans-serif;
+
+///////////////// Breakpoints /////////////////
+$bp-desktop: 59rem;
+
+///////////////// Styles /////////////////
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px/16px
+}
+
+body {
+  background-color: $color-primary;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+
+  font-family: $font-1;
+  color: $color-white;
+
+  background-color: $color-secondary;
+  border-radius: 5px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: $bp-desktop) {
+    flex-direction: row-reverse;
+    height: 60%;
+    width: 70%;
+    margin-top: 18rem;
+  }
+
+  &__picture {
+    width: 100%;
+    background-color: $color-tertiary;
+
+    &--img {
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: multiply;
+
+      @media only screen and (min-width: $bp-desktop) {
+        min-width: 300px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+
+    @media only screen and (min-width: $bp-desktop) {
+      min-width: 350px;
+      padding: 3rem 6rem;
+      font-size: 2rem;
+    }
+    &--heading {
+      margin-top: 2rem;
+      &--bold {
+        color: $color-tertiary;
+      }
+    }
+
+    &--paragraph {
+      color: $color-grey-dark;
+      margin-top: 2rem;
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+    }
+  }
+  &__stats {
+    margin-top: 4rem;
+
+    @media only screen and (min-width: $bp-desktop) {
+      display: flex;
+      justify-content: space-around;
+    }
+    &__box {
+      &--p {
+        text-transform: uppercase;
+        color: $color-grey-dark;
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        margin: 1rem 0 3rem 0;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: $color-grey-light;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
