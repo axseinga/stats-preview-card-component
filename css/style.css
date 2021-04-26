@@ -33,6 +33,7 @@ body {
     width: 100%;
     background-color: #aa5cdb; }
     .container__picture--img {
+      display: block;
       width: 100%;
       height: 100%;
       mix-blend-mode: multiply; }
